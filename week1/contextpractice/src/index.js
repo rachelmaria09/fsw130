@@ -1,12 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import ThemeContext from './themeContext'
+import Provider from './Provider'
 
 ReactDOM.render (
-  <ThemeContext.Provider value = {'dark'}>
-    <App />
-  </ThemeContext.Provider>,
+  <Provider />,
   document.getElementById('root')
 )

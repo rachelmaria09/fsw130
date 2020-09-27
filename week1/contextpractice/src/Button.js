@@ -4,8 +4,8 @@ import ThemeContext from './themeContext'
 function Button (props) {
     return (
         <ThemeContext.Consumer>
-            {theme => (
-                <button className={`${theme}-theme`}>Toggle</button>
+            {({theme, changeTheme}) => (
+                <button className={`${theme}-theme`} onClick={changeTheme}>Toggle</button>
             )}
         </ThemeContext.Consumer>
     )

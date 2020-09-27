@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <ThemeContext.Consumer>
-        {theme => (
+        {({theme}) => (
           <Button theme = {theme} />
         )}
       </ThemeContext.Consumer>
