@@ -19,23 +19,27 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <main>
-          <AnimalContextConsumer>
-            {({animal}) => (
-              <p className="main"> {animal} </p>
-            )}
-          </AnimalContextConsumer>
-        </main>
-        <input
-          className="input"
-          type="text"
-          name="animal"
-          placeholder="New Animal"
-          value={this.state.newAnimal}
-          onChange={this.handleChange}
-        />
-        <br></br>
-        <button>Add animal</button>
+      <main>
+        <AnimalContextConsumer>
+          {({animalNames, addAnimal}) => (
+      <div>
+      <input
+        className="input"
+        type="text"
+        name="newAnimal"
+        placeholder="New Animal"
+        value={this.state.newAnimal}
+        onChange={this.handleChange}
+      />
+      <br></br>
+      <button onClick={() => addAnimal(this.state.newAnimal)}>Add animal</button>
+        {animalNames.map(animal => (
+          <p className="main"> {animal} </p>
+        ))}
+      </div>
+          )}
+        </AnimalContextConsumer>
+      </main>
         <List />
         <Footer />
       </div>

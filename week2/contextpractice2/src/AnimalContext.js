@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 const {Provider, Consumer} = React.createContext()
 
 class AnimalContextProvider extends React.Component {
     state = {
-        animalName: "dog"
+        animalNames: []
     }
 
     addAnimal = (animalName) => {
-        this.setState({animalName})
+        this.setState({animalNames: [...this.state.animalNames, animalName]})
     }
 
     render() {
-        const {animalName} = this.state
+        const {animalNames} = this.state
         return (
-            <Provider value={{animalName, addAnimal: this.addAnimal}}>
+            <Provider value={{animalNames, addAnimal: this.addAnimal}}>
                 {this.props.children}
             </Provider>
         )
