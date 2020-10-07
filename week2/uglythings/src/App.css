@@ -13,9 +13,9 @@ body {
   color:  rgb(219, 207, 207);;
 }
 .input {
-  margin: 20px;
-  height: 3em;
-  width: 20em;
+  margin: 10px;
+  height: 2em;
+  width: 14em;
 }
 button {
   background-color: black;
