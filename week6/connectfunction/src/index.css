@@ -1,0 +1,32 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    background-color: rgb(35, 130, 207);
+}
+.row {
+    background-color: whitesmoke;
+}
+.form-control {
+    height: 2em;
+}
+.addButton {
+    background-color: whitesmoke;
+    border: none;
+    height: 2em;
+    width: 4em;
+    margin: 10px;
+}
+.removeButton {
+    background-color: red;
+    height: 2em;
+    color: whitesmoke;
+    border: none;
+    margin: 10px;
+}
+.container {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.list-group {
+    list-style-type: none;
+}
