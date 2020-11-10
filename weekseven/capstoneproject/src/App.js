@@ -3,8 +3,9 @@ import { Switch, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Contactus from "./components/Contactus"
 import Facilities from "./components/Facilities"
-import Services from "./components/Services"
+import Gallery from "./components/Gallery"
 import Home from "./components/Home"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -12,22 +13,23 @@ function App() {
       <Navbar />
       <Switch>
         <Route
-          path="/home"
+          exact path="/"
           render={() => <Home />}
         />
         <Route
-          path="/contactus"
+          exact path="/contactus"
           render={() => <Contactus />}
         />
         <Route
-          path="/facilities"
+          exact path="/facilities"
           render={() => <Facilities />}
         />
         <Route
-          path="/services"
-          render={() => <Services />}
+          exact path="/gallery"
+          render={() => <Gallery />}
         />
       </Switch>
+      <Footer />
     </div>
   );
 }

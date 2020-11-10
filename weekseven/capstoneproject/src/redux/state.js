@@ -1,9 +1,9 @@
 const redux = require("redux")
 const { combineReducers, createStore } = redux
-const { contactsReducer } = require("./contactus")
+const contactsReducer = require("./contactus")
 
 const rootReducer = combineReducers ({
-    contacts: contactsReducer
+    contacts: contactsReducer.default
 })
 
 const store = createStore(rootReducer)

@@ -29,15 +29,18 @@ export function setInputs(name, value) {
 
 const initialState = {
     contacts: [],
-    contact: ""
+    name: "",
+    inquiry: "",
+    contactType: ""
 }
 
 export default function contactsReducer(state = initialState, action) {
     switch(action.type) {
         case "ADD_CONTACT":
+            const newContact = {name:state.name, inquiry: state.inquiry, contactType: state.contactType}
             return {
                 ...state,
-                contacts: [...state.contacts, state.contact], contact: ""
+                contacts: [...state.contacts, newContact], contact: ""
             }
         case "DELETE_CONTACT":
             let newContacts = [...state.contacts]
@@ -47,7 +50,7 @@ export default function contactsReducer(state = initialState, action) {
                 contacts: newContacts
             }
         case "GET_CONTACTS":
-            return [...state]
+            return state
         case "SET_INPUTS":
             return {
                 ...state,

@@ -21,9 +21,11 @@ function Contactus (props) {
 
     return (
         <div>
+        <h3>Contact Us</h3>
+        <div id="contactUsPage">
             <form>
-                <h3>Contact Us</h3>
                 <input
+                    className="input"
                     type="text"
                     name="name"
                     value={props.name}
@@ -32,6 +34,7 @@ function Contactus (props) {
                 />
                 <br />
                 <input
+                    className="input"
                     type="text"
                     name="contactType"
                     value={props.contactType}
@@ -40,6 +43,7 @@ function Contactus (props) {
                 />
                 <br />
                 <input
+                    className="questionInput"
                     type="text"
                     name="inquiry"
                     value={props.inquiry}
@@ -49,17 +53,22 @@ function Contactus (props) {
                 <br />
                 <p>{props.contact}</p>
                 <br />
-                <button onClick={onClickUpdate}>Submit</button>
+                <button id="submitBtn"onClick={onClickUpdate}>Submit</button>
             </form>
 
             {props.contacts.map((contacts, index) =>
                 <div key={index}>
-                    <p>{contacts}</p>
-                    <button onClick={(event) => onClickDelete (event, index)}>Delete</button>
+                    <p id="contactInfo">{contacts.name}
+                    <br />{contacts.contactType}
+                    <br />{contacts.inquiry}</p>
+                    <button id="deleteBtn" onClick={(event) => onClickDelete (event, index)}>Delete</button>
                 </div>
             )}
         </div>
+    </div>
     )
 }
 
-export default connect(state => ({...state.contacts, contacts: state.contacts.contacts}), {addContact, deleteContact, getAllContacts, setInputs})(Contactus)
+export default connect(state => {
+    // console.log(JSON.stringify(state), "line 66")
+    return ({...state.contacts, contacts: state.contacts.contacts})}, {addContact, deleteContact, getAllContacts, setInputs})(Contactus)
